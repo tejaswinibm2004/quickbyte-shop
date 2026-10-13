@@ -1,0 +1,42 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; color: #1e293b; background: #f8fafc; }
+
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 28px; background: #0f172a; color: #fff;
+  position: sticky; top: 0; z-index: 100;
+}
+.topbar nav a { color: #cbd5e1; margin: 0 12px; text-decoration: none; }
+.topbar nav a:hover { color: #fff; }
+.cart-btn { background: #6366f1; color: #fff; border: none; border-radius: 8px; padding: 10px 16px; cursor: pointer; }
+
+/* BUG 1 (cosmetic): headline is pulled down over the hero art and unreadable on mobile. */
+.hero { display: flex; align-items: center; gap: 24px; padding: 48px 28px; background: linear-gradient(135deg, #eef2ff, #fae8ff); overflow: hidden; }
+.hero-text h1 { font-size: 64px; line-height: 1.05; margin-bottom: -46px; }
+.hero-text p { margin: 18px 0; color: #475569; }
+.cta { background: #0f172a; color: #fff; border: none; border-radius: 8px; padding: 12px 24px; cursor: pointer; }
+.hero-img { font-size: 150px; }
+
+/* BUG 2 (cosmetic): fixed 300px columns overflow small screens; no responsive rule. */
+.section-title { padding: 24px 28px 0; }
+.products { display: grid; grid-template-columns: repeat(4, 300px); gap: 20px; padding: 20px 28px 48px; overflow-x: auto; }
+
+.card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 16px; position: relative; }
+.card .photo { font-size: 64px; text-align: center; background: #f1f5f9; border-radius: 10px; padding: 18px; position: relative; z-index: 1; }
+/* BUG 3 (cosmetic): sale badge renders behind the photo, invisible to shoppers. */
+.card .badge { position: absolute; top: 22px; left: 22px; background: #ef4444; color: #fff; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 6px; z-index: -1; }
+.card h3 { margin: 12px 0 4px; font-size: 16px; }
+/* BUG 4 (cosmetic): prices use inconsistent decimals and alignment vs the cart. */
+.card .price { color: #16a34a; font-weight: 800; margin: 6px 0 12px; text-align: right; }
+.card button { width: 100%; background: #6366f1; color: #fff; border: none; border-radius: 8px; padding: 10px; cursor: pointer; }
+
+.cart { position: fixed; top: 0; right: 0; width: 320px; height: 100vh; background: #fff; border-left: 1px solid #e2e8f0; padding: 20px; transform: translateX(100%); transition: transform .25s; z-index: 200; display: flex; flex-direction: column; gap: 12px; }
+.cart.open { transform: none; }
+.cart-head { display: flex; justify-content: space-between; align-items: center; }
+.cart-items { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; }
+.cart-item { display: flex; justify-content: space-between; font-size: 14px; }
+.cart-total { font-weight: 800; font-size: 18px; }
+.checkout { background: #16a34a; color: #fff; border: none; border-radius: 8px; padding: 12px; cursor: pointer; }
+
+/* BUG 5 (cosmetic): footer text is near-invisible on the dark background. */
+footer { background: #0f172a; color: #141c2e; padding: 28px; text-align: center; font-size: 13px; }

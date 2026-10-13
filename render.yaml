@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: quickbyte-shop
+    runtime: static
+    # Own repository: this file lives at the repo root next to index.html.
+    buildCommand: node scripts/build-config.mjs
+    staticPublishPath: ./
+    envVars:
+      # Public URL of the BugShield platform service, no trailing slash.
+      - key: BUGSHIELD_HOST
+        sync: false
+      # Application id from the BugShield dashboard (Apps → Test Web 1).
+      - key: BUGSHIELD_APP_ID
+        sync: false
+      # Scoped ingestion key for this shop (Apps → Ingestion keys), origin
+      # allow-listed to this site's public URL. Rotatable any time.
+      - key: BUGSHIELD_INGESTION_KEY
+        sync: false
