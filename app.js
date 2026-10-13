@@ -19,7 +19,7 @@ function renderProducts() {
       <div class="photo">${p.emoji}</div>
       <h3>${p.name}</h3>
       <div class="price">$${p.price}</div>
-      <button onclick="addToCart('${p.id}')">Add to Cart</button>
+      <button onclick="addToCart('${p.id}')">Add to Card</button>
     </div>`).join('');
 }
 
