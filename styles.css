@@ -12,7 +12,7 @@ body { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; color: #1e293
 
 /* BUG 1 (cosmetic): headline is pulled down over the hero art and unreadable on mobile. */
 .hero { display: flex; align-items: center; gap: 24px; padding: 48px 28px; background: linear-gradient(135deg, #eef2ff, #fae8ff); overflow: hidden; }
-.hero-text h1 { font-size: 64px; line-height: 1.05; margin-bottom: -46px; }
+.hero-text h1 { font-size: 64px; line-height: 1.05; margin-bottom: 0; }
 .hero-text p { margin: 18px 0; color: #475569; }
 .cta { background: #0f172a; color: #fff; border: none; border-radius: 8px; padding: 12px 24px; cursor: pointer; }
 .hero-img { font-size: 150px; }
